@@ -1,0 +1,34 @@
+name: depends-on
+on:
+  push:
+    branches:
+      - main    
+      - development
+jobs:
+  service:
+    runs-on: ubuntu-latest
+    outputs:
+      CONDITION_MATCH: ${{ steps.perform-login.outputs.CONDITION_MATCH }}
+    steps:
+      - name: Perform login or verification
+        id: perform-login
+        run: |
+          # Perform a conditional check
+          if [ $(expr 1 + 1) -eq 3 ]; then
+            echo "Login successful or condition met."
+            echo "::set-output name=CONDITION_MATCH::true"
+          else
+            echo "Login failed or condition not met."
+            echo "::set-output name=CONDITION_MATCH::false"
+          fi
+
+      - name: string from first-stage
+        run: echo "string from first-stage"
+
+  dependant-job:
+    runs-on: ubuntu-latest
+    needs: service
+    if: ${{ needs.service.outputs.CONDITION_MATCH == 'true' }}
+    steps:
+      - name: string from second-stage
+        run: echo "Yes, total answer is match."
