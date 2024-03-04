@@ -14,6 +14,7 @@ The workflow consists of two stages:
 
 - A login or verification process is performed.
 - If the condition is met (for example, 1 + 1 equals 2), the output variable CONDITION_MATCH is set to true.
+- Else the condition is not met (for example, 1 + 1 equals X) , the output variable CONDITION_MATCH is set to false and given stage will not run.
 - If the condition is not met, the output variable CONDITION_MATCH is set to false.
 
 ### 2) Dependent Job
