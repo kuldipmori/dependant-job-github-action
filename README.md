@@ -25,7 +25,7 @@ The workflow consists of two stages:
 
 ## Workflow File
 
-The workflow file **[job-flow.yaml](https://github.com/kuldipmori/dependant-job-github-action/blob/development/.github/workflows/job-flow.yaml)** contains the configuration for this workflow. You can modify this file according to your requirements.
+The workflow file **[job-flow.yaml](https://github.com/kuldipmori/dependant-job-github-action/blob/main/.github/workflows/job-flow.yaml)** contains the configuration for this workflow. You can modify this file according to your requirements.
 
 ## Usage
 
