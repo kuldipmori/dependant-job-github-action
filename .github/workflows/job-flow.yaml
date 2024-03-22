@@ -14,7 +14,7 @@ jobs:
         id: perform-login
         run: |
           # Perform a conditional check
-          if [ $(expr 1 + 1) -eq 4 ]; then
+          if [ $(expr 1 + 1) -eq 2 ]; then
             echo "Login successful or condition met."
             echo "::set-output name=CONDITION_MATCH::true"
           else
